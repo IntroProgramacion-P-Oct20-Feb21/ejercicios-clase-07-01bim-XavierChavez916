@@ -20,9 +20,9 @@ public class Ejemplo02 {
         double nota;
         boolean bandera = true;
         String salida;
+        double suma = 0;
         double promedio;
-        double calificaciones=0;
-        int contador = 1;
+        int contador = 0;
         do{
             System.out.println("Ingrese calificaciones");
             nota = entrada.nextDouble();
@@ -32,18 +32,15 @@ public class Ejemplo02 {
             System.out.println("Ingrese (s) si desea salir del ciclo ");
             salida = entrada.nextLine();
             
-            calificaciones = calificaciones + 1;
-            contador = contador + 1;
-            
-            
-            
+            suma = suma + nota;
+            contador = contador + 1;            
             
             if (salida.equals("s")) {
                 bandera = false;
             }
+            promedio = suma/contador;
             
         }while(bandera); // (bandera==true)
-        promedio = calificaciones / contador;
-        System.out.printf("Listado de Notas\n%s%s%s", cadenaFinal,"\t",promedio);
+        System.out.printf("Listado de Notas\n%s%s%.2f\n", cadenaFinal,"Y el promedio es: ",promedio);
     }
 }
